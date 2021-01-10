@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>lalala</title>
+</head>
+<style>
+	html {padding:0;height:0px;}
+	body {position: relative;background-image: url("台灣1.jpg"); background-repeat: no-repeat;  margin: 0px; }
+	
+	#animate {background-image: url("胖丁.png"); width: 50px; height: 50px; position: absolute; background-size:cover}	
+    #abc{background-image:url("台北.png");width:945px;height: 640px;display:none;position:absolute ;top:0px;left:0px;}
+</style>
+<body onkeydown="eval(event)">
+	<div id="animate"></div>
+	<div id="abc"></div>
+
+	<script>
+		var xbool=false;
+		var ybool=false;
+		function eval(event) {
+			var elem = document.getElementById("animate");
+			var abc = document.getElementById("abc");
+			var x = elem.offsetLeft ||500;
+			var y = elem.offsetTop ||0;
+			var key = event.which || event.keyCode;
+			console.log(x);
+			console.log(y);
+			
+			switch(key){
+				case 87:
+				abc.style.display="none";
+				if(y>0)
+				{
+					
+					elem.style.top = (y-5) + 'px';
+				}
+				break;
+
+				case 83:
+				abc.style.display="none";
+				if(y<600)
+				{
+					
+					elem.style.top = (y+5) + 'px';
+				}
+				break;
+
+				case 65:
+				abc.style.display="none";
+				if(x>0)
+				{
+					
+					elem.style.left = (x-5) + 'px';
+				}
+				break;
+				case 68:
+				abc.style.display="none";
+				if(x<900)
+				{
+					
+					elem.style.left = (x+5) + 'px';
+				}
+				break;
+
+				case 32:
+				if( x>=615 && x<=620&&y<=70 &&y>=0)
+					{
+						abc.style.backgroundImage="url('台北.png')";
+						abc.style.display="block";
+					} 
+					else if(x>=625&&x<=690&&y>=200&&y<=230)
+					{
+						abc.style.backgroundImage="url('花蓮.png')";
+						abc.style.display="block";
+					}
+					else if(x>=480&&x<=500&&y>=180&&y<=200)
+					{
+						abc.style.backgroundImage="url('台中.png')";
+						abc.style.display="block";
+					}
+					else if(x>=445&&x<=490&&y>=265&&y<=315)
+					{
+						abc.style.backgroundImage="url('嘉義.png')";
+						abc.style.display="block";
+					}
+					else if(x>=435&&x<=470&&y>=345&&y<=395)
+					{
+						abc.style.backgroundImage="url('台南.png')";
+						abc.style.display="block";
+					}
+					else if(x>=440&&x<=480&&y>=455&&y<=490)
+					{
+						abc.style.backgroundImage="url('高雄.png')";
+						abc.style.display="block";
+					}
+					else if(x>=485&&x<=560&&y>=530&&y<=590)
+					{
+						abc.style.backgroundImage="url('屏東.png')";
+						abc.style.display="block";
+					}
+					else if(x>=430&&x<=610&&y>=400&&y<=450)
+					{
+						abc.style.backgroundImage="url('台東.png')";
+						abc.style.display="block";
+					}
+					
+					break;
+				}
+			}
+					
+		</script>
+	</body>
+	</html>
